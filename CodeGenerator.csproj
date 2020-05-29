@@ -1,0 +1,74 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Code\**" />
+    <EmbeddedResource Remove="Code\**" />
+    <None Remove="Code\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="CrudTemplate\WipAddModel.cs" />
+    <Compile Remove="CrudTemplate\WipAuditService.cs" />
+    <Compile Remove="CrudTemplate\WipController.cs" />
+    <Compile Remove="CrudTemplate\WipEditModel.cs" />
+    <Compile Remove="CrudTemplate\WipModel.cs" />
+    <Compile Remove="CrudTemplate\WipPermissionService.cs" />
+    <Compile Remove="CrudTemplate\WipRepository.cs" />
+    <Compile Remove="CrudTemplate\WipSearchCriteria.cs" />
+    <Compile Remove="CrudTemplate\WipService.cs" />
+    <Compile Remove="CrudTemplate\WipView.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="CrudTemplate\WipEditModel.cs" />
+    <None Include="CrudTemplate\WipAddModel.cs" />
+    <None Include="CrudTemplate\WipPermissionService.cs" />
+    <None Include="CrudTemplate\WipController.cs" />
+    <None Include="CrudTemplate\WipModel.cs" />
+    <None Include="CrudTemplate\WipRepository.cs" />
+    <None Include="CrudTemplate\WipSearchCriteria.cs" />
+    <None Include="CrudTemplate\WipAuditService.cs" />
+    <None Include="CrudTemplate\WipService.cs" />
+    <None Include="CrudTemplate\WipView.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AsyncFixer" Version="1.1.6">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="3.6.0" />
+    <PackageReference Include="SecurityCodeScan" Version="3.5.3">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Backend\Api\All\LogR.App.Api.csproj" />
+    <ProjectReference Include="..\..\..\Backend\Shared\Common\LogR.Common.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <CodeAnalysisRuleSet>..\..\..\Backend\Op.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>Full</DebugType>
+  </PropertyGroup>
+
+</Project>
